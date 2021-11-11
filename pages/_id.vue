@@ -29,6 +29,16 @@
           :block="data[propertie]"
           :name="propertie"
         />
+        <Formula
+          v-if="data[propertie].type === 'formula'"
+          :block="data[propertie]"
+          :name="propertie"
+        />
+        <Select
+          v-if="['select', 'multi_select'].includes(data[propertie].type)"
+          :block="data[propertie]"
+          :name="propertie"
+        />
       </div>
       <pre>{{ data }}</pre>
     </div>
