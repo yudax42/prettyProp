@@ -44,6 +44,11 @@
           :block="data[propertie]"
           :name="propertie"
         />
+        <Relation
+          v-if="data[propertie].type === 'relation'"
+          :block="data[propertie]"
+          :name="propertie"
+        />
         <Person
           v-if="
             ['created_by', 'last_edited_by', 'people'].includes(
