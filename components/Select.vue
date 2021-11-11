@@ -69,7 +69,7 @@ export default {
 
 <style>
 .select {
-  @apply px-1.5 py-0.5 rounded-full inline-block font-light;
+  @apply px-1.5 py-0.5 rounded-full inline-block font-light mr-1 text-sm;
   color: #37352f;
 }
 </style>

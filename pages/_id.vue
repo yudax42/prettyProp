@@ -39,6 +39,11 @@
           :block="data[propertie]"
           :name="propertie"
         />
+        <CheckBox
+          v-if="data[propertie].type === 'checkbox'"
+          :block="data[propertie]"
+          :name="propertie"
+        />
       </div>
       <pre>{{ data }}</pre>
     </div>
