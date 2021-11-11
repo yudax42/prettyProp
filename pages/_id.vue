@@ -58,6 +58,11 @@
           :block="data[propertie]"
           :name="propertie"
         />
+        <Number
+          v-if="data[propertie].type === 'number'"
+          :block="data[propertie]"
+          :name="propertie"
+        />
       </div>
       <pre>{{ data }}</pre>
     </div>
