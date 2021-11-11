@@ -44,6 +44,15 @@
           :block="data[propertie]"
           :name="propertie"
         />
+        <Person
+          v-if="
+            ['created_by', 'last_edited_by', 'people'].includes(
+              data[propertie].type
+            )
+          "
+          :block="data[propertie]"
+          :name="propertie"
+        />
       </div>
       <pre>{{ data }}</pre>
     </div>
