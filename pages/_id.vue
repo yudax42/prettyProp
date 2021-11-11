@@ -1,5 +1,6 @@
 <template>
   <main class="pt-16">
+    <Header :icon="icon" :cover="cover" />
     <p v-if="error">Failed to fetch page</p>
     <p v-else-if="data === null">Loading</p>
     <div v-else>
@@ -64,7 +65,7 @@
           :name="propertie"
         />
       </div>
-      <pre>{{ data }}</pre>
+      <pre>{{ cover }} {{ icon }}</pre>
     </div>
   </main>
 </template>
@@ -73,6 +74,8 @@
 export default {
   data() {
     return {
+      icon: null,
+      cover: null,
       data: null,
       error: false,
     }
@@ -82,6 +85,8 @@ export default {
       const data = await this.$store.dispatch('pages/getPage', {
         pageId: this.$route.params.id,
       })
+      this.icon = data.post.icon
+      this.cover = data.post.cover
       this.data = data.post.properties
     } catch (err) {
       console.log(err)
