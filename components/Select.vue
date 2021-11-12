@@ -1,27 +1,19 @@
 <template>
-  <div class="w-full grid grid-cols-2">
-    <div>
-      {{ name }}
-    </div>
-    <div>
-      <ul>
-        <li
-          class="select"
-          v-for="(option, i) in options"
-          :key="i"
-          :style="{ 'background-color': option.color }"
-        >
-          {{ option.name }}
-        </li>
-      </ul>
-    </div>
-  </div>
+  <ul>
+    <li
+      class="select"
+      v-for="(option, i) in options"
+      :key="i"
+      :style="{ 'background-color': option.color }"
+    >
+      {{ option.name }}
+    </li>
+  </ul>
 </template>
 
 <script>
 export default {
   props: {
-    name: { type: String, required: true },
     block: {
       required: true,
       type: Object,
@@ -69,7 +61,7 @@ export default {
 
 <style>
 .select {
-  @apply px-1.5 py-0.5 rounded-full inline-block font-light mr-1 text-sm;
+  @apply px-1.5 py-0.5 rounded-full inline-block font-light mr-1 mb-3 text-sm;
   color: #37352f;
 }
 </style>

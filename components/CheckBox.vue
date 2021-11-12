@@ -1,18 +1,12 @@
 <template>
-  <div class="w-full grid grid-cols-2">
-    <div>
-      {{ name }}
-    </div>
-    <div>
-      {{ checkBox }}
-    </div>
+  <div>
+    {{ checkBox }}
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    name: { type: String, required: true },
     block: {
       required: true,
       type: Object,

@@ -1,49 +1,43 @@
 <template>
-  <div class="w-full grid grid-cols-2">
-    <div>
-      {{ name }}
-    </div>
-    <div>
-      <span
-        v-for="(item, i) in block.rich_text"
-        :key="i"
-        :class="{
-          fontBold: item.annotations.bold && !item.annotations.code,
-          italic: item.annotations.italic,
-          lineThrough: item.annotations.strikethrough,
-          underline: item.annotations.underline,
-          code: item.annotations.code,
-          serif: item.type == 'equation',
-        }"
-        :style="{
-          color:
-            item.annotations.color != 'default'
-              ? getColor(item.annotations.color)
-              : null,
-          'background-color':
-            item.annotations.color != 'default' &&
-            item.annotations.color.split('_')[1]
-              ? getBgColor(item.annotations.color.split('_')[0])
-              : 'none',
-        }"
+  <div>
+    <span
+      v-for="(item, i) in block.rich_text"
+      :key="i"
+      :class="{
+        fontBold: item.annotations.bold && !item.annotations.code,
+        italic: item.annotations.italic,
+        lineThrough: item.annotations.strikethrough,
+        underline: item.annotations.underline,
+        code: item.annotations.code,
+        serif: item.type == 'equation',
+      }"
+      :style="{
+        color:
+          item.annotations.color != 'default'
+            ? getColor(item.annotations.color)
+            : null,
+        'background-color':
+          item.annotations.color != 'default' &&
+          item.annotations.color.split('_')[1]
+            ? getBgColor(item.annotations.color.split('_')[0])
+            : 'none',
+      }"
+    >
+      <a
+        v-if="item.href"
+        :href="item.href"
+        rel="noopener noreferrer"
+        target="_blank"
+        class="text-blue-600 underline"
+        >{{ item.plain_text }}</a
       >
-        <a
-          v-if="item.href"
-          :href="item.href"
-          rel="noopener noreferrer"
-          target="_blank"
-          class="text-blue-600 underline"
-          >{{ item.plain_text }}</a
-        >
-        <span v-else-if="!item.href">{{ item.plain_text }}</span>
-      </span>
-    </div>
+      <span v-else-if="!item.href">{{ item.plain_text }}</span>
+    </span>
   </div>
 </template>
 <script>
 export default {
   props: {
-    name: { type: String, required: true },
     block: {
       required: true,
       type: Object,

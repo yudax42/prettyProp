@@ -1,27 +1,19 @@
 <template>
-  <div class="w-full grid grid-cols-2">
-    <div>
-      {{ name }}
-    </div>
-    <div>
-      <ul>
-        <li v-for="person in people" class="inline-block mr-1" :key="person.id">
-          <img
-            :src="person.avatar"
-            class="w-6 h-6 rounded-full mr-1 inline-block"
-            :alt="person.name"
-          />
-          <span class="inline-block">{{ person.name }}</span>
-        </li>
-      </ul>
-    </div>
-  </div>
+  <ul>
+    <li v-for="person in people" class="inline-block mr-1" :key="person.id">
+      <img
+        :src="person.avatar"
+        class="w-6 h-6 rounded-full mr-1 inline-block"
+        :alt="person.name"
+      />
+      <span class="inline-block">{{ person.name }}</span>
+    </li>
+  </ul>
 </template>
 
 <script>
 export default {
   props: {
-    name: { type: String, required: true },
     block: {
       required: true,
       type: Object,
