@@ -19,3 +19,11 @@
 ## 4. Change the website name (OPTIONAL)
 
 ![](./Guide/step3.gif)
+
+## 5. Copy the table id and add it after your website name
+
+![](./Guide/final.gif)
+
+Notion: https://yudax.notion.site/This-is-a-name-1f727a39836e420a9ab080b59434de4f
+
+Website: https://notionpage.netlify.app/1f727a39836e420a9ab080b59434de4f
