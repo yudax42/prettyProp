@@ -3,4 +3,4 @@
   functions = "lambda" 
   publish = "dist"
 [template.environment]
-  secret = "change me for your secret token"
+  secret = "Add Your Notion Secret"

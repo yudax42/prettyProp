@@ -15,9 +15,6 @@
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/yudax42/prettyProp)
 
 3.2 Add the Notion secret to your Site environment variables
-![](./Guide/step2.gif)
-
-**3.3 Trigger another Deploy**
 
 ## 4. Change the website name (OPTIONAL)
 
