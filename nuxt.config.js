@@ -55,6 +55,6 @@ export default {
     baseURL:
       process.env.NODE_ENV == 'development'
         ? 'http://localhost:9000/.netlify/functions/'
-        : `${process.env.baseUrl}/.netlify/functions/`,
+        : `.netlify/functions/`,
   },
 }
