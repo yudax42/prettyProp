@@ -48,7 +48,7 @@ export default {
               : ''
           }`
         case 'boolean':
-          return this.block.formula.boolean === true ? '☐' : '✅'
+          return this.block.formula.boolean === true ? '✅' : '☐'
       }
     },
   },

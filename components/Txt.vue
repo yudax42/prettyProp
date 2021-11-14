@@ -1,7 +1,8 @@
 <template>
   <div>
+    <!-- hada howa type{{ type }} {{ block[type] }} -->
     <span
-      v-for="(item, i) in block.rich_text"
+      v-for="(item, i) in block[type]"
       :key="i"
       :class="{
         fontBold: item.annotations.bold && !item.annotations.code,
@@ -29,7 +30,7 @@
         rel="noopener noreferrer"
         target="_blank"
         class="text-blue-600 underline"
-        >{{ item.plain_text }}</a
+        >{{ item[type] }}</a
       >
       <span v-else-if="!item.href">{{ item.plain_text }}</span>
     </span>
@@ -41,6 +42,9 @@ export default {
     block: {
       required: true,
       type: Object,
+    },
+    type: {
+      type: String,
     },
   },
   methods: {

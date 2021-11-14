@@ -1,5 +1,6 @@
 <template>
-  <main class="pt-16 w-6/12 mx-auto">
+  <main class="pt-16 w-9/12 mx-auto">
+    <pre>{{ data }}</pre>
     <Header :icon="icon" :cover="cover" />
     <p v-if="error">Failed to fetch page</p>
     <p v-else-if="data === null">Loading</p>
@@ -9,7 +10,10 @@
         class="bg-white border border-gray-200 mb-7 p-3 rounded-xl"
         :key="i"
       >
-        <div class="text-xs mb-5">{{ propertie.toUpperCase() }}</div>
+        <div class="text-xs mb-5">
+          <Vicon class="w-4 h-4 inline-block" :icon="data[propertie].type" />
+          {{ propertie.toUpperCase() }}
+        </div>
         <div>
           <Files
             v-if="data[propertie].type === 'files'"
@@ -22,8 +26,12 @@
             :block="data[propertie]"
           />
           <Txt
-            v-if="data[propertie].type === 'rich_text'"
+            v-if="
+              data[propertie].type === 'rich_text' ||
+              data[propertie].type === 'title'
+            "
             :block="data[propertie]"
+            :type="data[propertie].type"
           />
           <Time
             v-if="

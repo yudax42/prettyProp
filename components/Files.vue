@@ -1,18 +1,27 @@
 <template>
   <ul>
-    <li v-for="el in block.files" class="inline-block" :key="el.name">
+    <li
+      v-for="el in block.files"
+      class="inline-block w-32 h-32 mr-1 bg-gray-100 rounded-lg overflow-hidden"
+      :key="el.name"
+    >
       <img
         v-if="el.type == 'file' && isImage(el.name)"
+        class="w-full h-full object-cover"
         :src="el.file.url"
         width="100"
         height="100"
       />
-      <div v-else-if="el.type == 'file' && !isImage(el.name)">
-        <a :href="el.file.url">{{ el.name }}</a>
+      <div
+        class="flex w-full h-full text-center text-sm items-center"
+        v-else-if="el.type == 'file' && !isImage(el.name)"
+      >
+        <a class="block mx-auto" :href="el.file.url">{{ el.name }}</a>
       </div>
       <img
         v-if="el.type == 'external'"
         :src="el.external.url"
+        class="w-full h-full object-cover"
         width="100"
         height="100"
       />
