@@ -40,12 +40,14 @@ export default {
     options() {
       switch (this.block.type) {
         case 'select':
-          return [
-            {
-              name: this.block.select.name,
-              color: this.getColor(this.block.select.color),
-            },
-          ]
+          return this.block.select != null
+            ? [
+                {
+                  name: this.block.select.name,
+                  color: this.getColor(this.block.select.color),
+                },
+              ]
+            : []
         case 'multi_select':
           return this.block.multi_select.map((option) => {
             return {

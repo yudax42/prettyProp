@@ -19,7 +19,7 @@
         bg-opacity-30
         shadow-xl
         text-center
-        pt-2
+        p-2
         left-5
       "
     >
