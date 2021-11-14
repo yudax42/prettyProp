@@ -13,9 +13,13 @@
         w-24
         h-24
         absolute
-        -bottom-0
+        top-10
         bg-white
-        backdrop-blur-xl
+        backdrop-filter backdrop-blur-sm
+        bg-opacity-30
+        shadow-xl
+        text-center
+        pt-2
         left-5
       "
     >

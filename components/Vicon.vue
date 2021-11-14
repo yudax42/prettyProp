@@ -20,6 +20,7 @@
     <RichText v-else-if="icon == 'rich_text'" />
     <Select v-else-if="icon == 'select'" />
     <Url v-else-if="icon == 'url'" />
+    <Page v-else-if="icon == 'title'" />
   </div>
 
   <!-- <component v-bind:is="icon"></component> -->
@@ -40,12 +41,13 @@ import RichText from '@/assets/icons/RichText.vue'
 import Select from '@/assets/icons/Select.vue'
 import Url from '@/assets/icons/Url.vue'
 import Clock from '@/assets/icons/Clock.vue'
-
+import Page from '@/assets/icons/Page.vue'
 export default {
   props: {
     icon: String,
   },
   components: {
+    Page,
     Files,
     CheckBox,
     CreatedBy,

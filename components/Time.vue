@@ -39,7 +39,7 @@ export default {
         case 'date':
           return `${this.formatDate(this.block.date.start)} ${
             this.block.date.end !== null
-              ? ' -> ' + this.formatDate(this.block.date.end)
+              ? ' → ' + this.formatDate(this.block.date.end)
               : ''
           }`
         case 'created_time':

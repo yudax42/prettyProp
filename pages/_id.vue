@@ -1,18 +1,23 @@
 <template>
-  <main class="pt-16 w-9/12 mx-auto">
-    <pre>{{ data }}</pre>
+  <main class="pt-16 w-full container mb-24 px-5 mx-auto">
     <Header :icon="icon" :cover="cover" />
     <p v-if="error">Failed to fetch page</p>
     <p v-else-if="data === null">Loading</p>
-    <div class="grid grid-cols-3 gap-2 mt-10" v-else>
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 mt-10"
+      v-else
+    >
       <div
         v-for="(propertie, i) in properties"
         class="bg-white border border-gray-200 mb-7 p-3 rounded-xl"
         :key="i"
       >
-        <div class="text-xs mb-5">
-          <Vicon class="w-4 h-4 inline-block" :icon="data[propertie].type" />
-          {{ propertie.toUpperCase() }}
+        <div class="text-xs mb-5 flex items-center text-gray-800">
+          <Vicon
+            class="w-4 h-4 mr-1 inline-block"
+            :icon="data[propertie].type"
+          />
+          <span class="inline-block">{{ propertie.toUpperCase() }}</span>
         </div>
         <div>
           <Files
